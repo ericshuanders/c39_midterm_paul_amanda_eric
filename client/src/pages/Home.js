@@ -11,7 +11,7 @@ const Home = () => {
     const dob = new Date(event.target.elements.age.value);
     const now = new Date();
     if (now - dob >= 662810000000) {
-      window.location = '/';
+      history.push('/results');
     } else {
       alert("You're too young!");
     }

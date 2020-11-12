@@ -42,19 +42,10 @@ const Results = () => {
     }
   }, [search]);
 
-  console.log('what are my values', {
-    stateObj: sortOptions,
-    keyIWant: sortOptions.sortKey,
-    directionIWant: sortOptions.sortDirection
-  });
-
   const sortedBreweries = apiData.sort(function (a, b) {
     const aValue = a[sortOptions.sortKey];
     const bValue = b[sortOptions.sortKey];
 
-    // at the moment this will only work for numbers
-    // if you want to sort by strings, we will need to extend
-    // the logic to handle that
     return sortOptions.sortDirection === 'asc'
       ? aValue - bValue
       : bValue - aValue;
@@ -71,8 +62,8 @@ const Results = () => {
     <div>
       <Navbar />
       <div className="main">
-        <div className="image">
-          <img src={brewdog} alt="brewdog" />
+        <div className="results-dogs-div">
+          <img className="results-dogs" src={brewdog} alt="brewdog" />
         </div>
 
         <div class="fast">
@@ -94,7 +85,7 @@ const Results = () => {
             onClick={() => handleSortClick('abv', 'asc')}
           >
             Sort by ABV - ASC
-          </Button>
+          </Button>{' '}
           <Button
             variant="outline-dark"
             className={classNames({
@@ -103,7 +94,7 @@ const Results = () => {
             onClick={() => handleSortClick('abv', 'desc')}
           >
             Sort by ABV - DESC
-          </Button>
+          </Button>{' '}
           <Button
             variant="outline-dark"
             className={classNames({ active: isActiveSortOption('ibu', 'asc') })}
@@ -134,7 +125,7 @@ const Results = () => {
                 <div>
                   <motion.div
                     whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 2 }}
+                    transition={{ duration: 1 }}
                   >
                     <Card
                       bg="dark"
