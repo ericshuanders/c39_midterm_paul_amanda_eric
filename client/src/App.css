@@ -254,8 +254,7 @@
   -moz-box-shadow: 0px 0px 3px 5px #ffefa0;
   box-shadow: 0px 0px 3px 5px #ffefa0;
 }
-.randombeerbackground,
-.beerPage {
+/* .randombeerbackground {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -267,53 +266,73 @@
   background-size: 58px 58px;
   background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
   text-align: center;
-}
-
-.beerName {
+} */
+.beerPage {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.beer-info-background {
+  border: 1px solid black;
+  width: 50rem;
+  height: 50rem;
+}
+.beerName {
+  text-align: center;
   font-family: 'Oswald', sans-serif;
-  color: white;
+  color: black;
   font-size: 40px;
   text-align: center;
+  margin-bottom: 20px;
 }
-.beerDate {
-  display: flex;
-  font-family: 'Oswald', sans-serif;
-  color: white;
-  font-size: 40px;
-}
-
-.beerABV {
-  display: flex;
-  font-family: 'Oswald', sans-serif;
-  font-size: 35px;
-  color: white;
-  text-align: justify;
+.beerImage {
+  width: 25%;
+  height: 50%;
+  float: left;
 }
 
+.beerABV,
 .beerIBU {
   display: flex;
   font-family: 'Oswald', sans-serif;
   font-size: 35px;
-  color: white;
-  text-align: justify;
+  color: black;
+  text-align: center;
+  padding-left: 50px;
+}
+.tasting-notes {
+  display: flex;
+  font-family: 'Oswald', sans-serif;
+  font-size: 35px;
+  color: black;
+  text-align: center;
+  padding-left: 50px;
+  text-decoration: underline;
 }
 .beerDescription {
   display: flex;
   font-family: 'Oswald', sans-serif;
-  font-size: 35px;
-  color: white;
+  font-size: 25px;
+  color: black;
   text-align: justify;
   padding-right: 50px;
   padding-left: 50px;
 }
-
-.foodPairing {
+.foodPairing-header {
   display: flex;
   font-family: 'Oswald', sans-serif;
   font-size: 35px;
-  color: white;
-  text-align: justify;
+  color: black;
+  text-align: center;
+  padding-left: 50px;
+  text-decoration: underline;
+}
+.foodPairing {
+  display: flex;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  color: black;
+  /* text-align: justify; */
   padding-right: 50px;
   padding-left: 50px;
 }
@@ -322,7 +341,7 @@
   display: flex;
   font-family: 'Oswald', sans-serif;
   font-size: 35px;
-  color: white;
+  color: black;
   text-align: justify;
 }
 
@@ -330,28 +349,28 @@ h2 {
   display: flex;
   font-family: 'Oswald', sans-serif;
   font-size: 35px;
-  color: white;
+  color: black;
   text-align: justify;
 }
 h3 {
   display: flex;
   font-family: 'Oswald', sans-serif;
   font-size: 35px;
-  color: white;
+  color: black;
   text-align: justify;
 }
 .beerBrew {
   display: flex;
   font-family: 'Oswald', sans-serif;
   font-size: 35px;
-  color: white;
+  color: black;
   text-align: justify;
 }
 .beerMalt {
   display: flex;
   font-family: 'Oswald', sans-serif;
   font-size: 35px;
-  color: white;
+  color: black;
   text-align: justify;
 }
 .center {

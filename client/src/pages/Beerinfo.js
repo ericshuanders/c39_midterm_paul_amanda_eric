@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 const Beerinfo = () => {
   const history = useHistory();
   const handleClick = () => {
-    history.goBack();
+    history.push('/results');
   };
   const [beerInfo, setBeerInfo] = useState({});
   const { id } = useParams();
@@ -25,30 +25,36 @@ const Beerinfo = () => {
   }, [id]);
   console.log(beerInfo);
   return (
-    // <Navbar />
-    <div className="beerPage">
-      {/* <button onClick={handleClick}>Back</button> */}
-      <Button onClick={handleClick} variant="dark">
-        Back
-      </Button>{' '}
-      <div className="background"></div>
-      <h1 className="beerName">{beerInfo.name}</h1>
-      <div className="beer-picture">
-        <img
-          src={beerInfo.image_url == null ? dog : beerInfo.image_url}
-          className="beerImage"
-        />
+    <div>
+      <Navbar />
+      <div className="beerPage">
+        <Button onClick={handleClick} variant="dark">
+          Back
+        </Button>
+        <div className="beer-info-background">
+          <h1 className="beerName">{beerInfo.name}</h1>
+
+          <img
+            src={beerInfo.image_url == null ? dog : beerInfo.image_url}
+            className="beerImage"
+          />
+          <h2 className="beerABV"> abv: {beerInfo.abv}</h2>
+          <h2 className="beerIBU"> ibu: {beerInfo.ibu}</h2>
+          <h2 className="tasting-notes">Tasting Notes:</h2>
+          <p className="beerDescription">{beerInfo.description}</p>
+          <h2 className="foodPairing-header">Recommended food pairing: </h2>
+          {beerInfo.food_pairing?.map((food) => (
+            <p className="foodPairing">{food}</p>
+          ))}
+          {console.log(beerInfo.food_pairing)}
+          {console.log(beerInfo.food_pairing?.[0])}
+
+          <h2> Interested in brewing your own? </h2>
+          <h3>Try this: </h3>
+
+          <p className="beerBrew"> {beerInfo.brewers_tips}</p>
+        </div>
       </div>
-      <p className="beerDescription"> FACTOIDS: {beerInfo.description}</p>
-      <p className="foodPairing">
-        {' '}
-        Recommended food pairing: {beerInfo.food_pairing}
-      </p>
-      <p className="beerABV"> abv: {beerInfo.abv}</p>
-      <p className="beerIBU"> ibu: {beerInfo.ibu}</p>
-      <h2> Interested in brewing your own? </h2>
-      <h3>Try this: </h3>
-      <p className="beerBrew"> {beerInfo.brewers_tips}</p>
     </div>
   );
 };
