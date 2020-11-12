@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 const Randombeer = () => {
   const history = useHistory();
   const handleClick = () => {
-    history.goBack();
+    history.push('/results');
   };
   const refreshPage = () => {
     window.location.reload();
