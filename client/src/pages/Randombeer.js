@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 import dog from '../images/dog.jpg';
 import Button from 'react-bootstrap/Button';
@@ -28,33 +29,72 @@ const Randombeer = () => {
   }, []);
 
   return (
-    <div>
+    <div className="beer-info-wrapper">
       <Navbar />
-      <div className="randombeerbackground">
+
+      <Container className="beer-info-background">
         <Button onClick={handleClick} variant="dark">
           Back
-        </Button>{' '}
-        <Button onClick={refreshPage} variant="dark">
-          Give Me Another!
-        </Button>{' '}
-        <h1 className="randomName">{randomBeerInfo.name}</h1>;
+        </Button>
+        <div className="beerHeader">
+          <h1 className="beerName">{randomBeerInfo.name}</h1>
+          <h3 className="beerTag">"{randomBeerInfo.tagline}"</h3>
+        </div>
+
         <img
           src={
             randomBeerInfo.image_url == null ? dog : randomBeerInfo.image_url
           }
+          className="beerImage"
         />
-        <p className="randomDescription">
-          FACTOIDS: {randomBeerInfo.description}
-        </p>
-        <p className="randomfoodPairing">
-          RECOMMENDED FOOD PAIRING: {randomBeerInfo.food_pairing}
-        </p>
-        <p className="randombeerABV"> ABV: {randomBeerInfo.abv}</p>
-        <p className="randombeerIBU"> IBU: {randomBeerInfo.ibu}</p>
-        <h2> Interested in brewing your own? </h2>
-        <p className="line"> Try this: </p>
-        <p className="randombeerBrew"> {randomBeerInfo.brewers_tips}</p>
-      </div>
+        <h2 className="beerABV">
+          First Brewed in {randomBeerInfo.first_brewed}
+        </h2>
+        <h2 className="beerABV"> abv: {randomBeerInfo.abv}</h2>
+        <h2 className="beerIBU"> ibu: {randomBeerInfo.ibu}</h2>
+        <h2 className="tasting-notes">Tasting Notes:</h2>
+        <p className="beerDescription">{randomBeerInfo.description}</p>
+        <div className="foodPairing-div">
+          <h2 className="foodPairing-header">Recommended food pairing: </h2>
+          <ul>
+            {randomBeerInfo.food_pairing?.map((food) => (
+              <li className="foodPairing">{food}</li>
+            ))}
+          </ul>
+        </div>
+        {console.log(randomBeerInfo.food_pairing)}
+        {console.log(randomBeerInfo.food_pairing?.[0])}
+        <div className="brewing-tips-div">
+          <h2 className="brewing-tips">
+            Interested in brewing your own? Try this:{' '}
+          </h2>
+          <h3>Malts: </h3>
+          <ul>
+            {randomBeerInfo.ingredients?.malt?.map((malt) => (
+              <li className="beerBrew">
+                {malt?.name} : {malt?.amount?.value} {malt?.amount?.unit}
+              </li>
+            ))}
+          </ul>
+          <h3>Hops: </h3>
+          <ul>
+            {randomBeerInfo.ingredients?.hops?.map((hop) => (
+              <li className="beerBrew">
+                {hop?.name} : {hop?.amount?.value} {hop?.amount?.unit}
+              </li>
+            ))}
+          </ul>
+          <p className="beerBrew">
+            Boil Volume: {randomBeerInfo.volume?.value}{' '}
+            {randomBeerInfo.volume?.unit}
+          </p>
+          <p className="beerBrew">
+            Mash Temperature: {randomBeerInfo.method?.mash_temp[0].temp?.value}{' '}
+            {randomBeerInfo.method?.mash_temp[0].temp?.unit}
+          </p>
+          <p className="beerBrew"> {randomBeerInfo.brewers_tips}</p>
+        </div>
+      </Container>
     </div>
   );
 };
