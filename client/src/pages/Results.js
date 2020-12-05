@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import { Row, Col, Button, Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import classNames from 'classnames';
@@ -8,19 +9,23 @@ import dog from '../images/dog.jpg';
 import brewdog from '../images/dogs.jpg';
 import { motion } from 'framer-motion';
 
-const Results = () => {
-  const [search, setSearch] = useState();
-  const [apiData, setApiData] = useState([]);
+const Results = ({ search, apiData, setSearch, setApiData }) => {
   const [sortOptions, setSortOptions] = useState({
     sortKey: 'abv',
     sortDirection: 'asc'
   });
-
   const handleSubmit = (event) => {
-    event.preventDefault();
-    setSearch(event.target.elements.searchbar.value);
+    // event.preventDefault();
+    // setSearch(event.target.elements.searchbar.value);
+    if (event.key === 'Enter') {
+      setSearch(event.target.value);
+    }
+    console.log(event.target.value);
+    console.log(event.key);
   };
 
+  // const stateObj = { results: `${search}` };
+  // window.history.replaceState(stateObj, '', `/results/${search}`);
   const handleSortClick = (sortKey, sortDirection) => {
     setSortOptions({ sortKey, sortDirection });
   };
@@ -134,14 +139,14 @@ const Results = () => {
                       key={beer.id}
                       style={{ width: 200, margin: 5 }}
                     >
-                      <a href={`/beers/${beer.id}`}>
+                      <Link to={`/beers/${beer.id}`}>
                         <Card.Img
                           variant="top"
                           src={beer.image_url == null ? dog : beer.image_url}
                           alt={beer.name}
                           // width={100}
                         />
-                      </a>
+                      </Link>
 
                       <Card.Body>
                         <Card.Title>{beer.name}</Card.Title>

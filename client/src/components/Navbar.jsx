@@ -15,7 +15,7 @@ const Navbar = () => {
       <Nav defaultActiveKey="/home">
         <Nav.Item>
           <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
-            <Nav.Link className="link" href="/">
+            <Nav.Link className="link" href="/results">
               <h4>PAWYOUADRINK</h4>
             </Nav.Link>
           </motion.div>

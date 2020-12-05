@@ -2,6 +2,7 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import Dogsnbeer from '../images/dogandbeer.jpg';
+import swal from 'sweetalert'
 
 const Home = () => {
   const history = useHistory();
@@ -13,7 +14,7 @@ const Home = () => {
     if (now - dob >= 662810000000) {
       history.push('/results');
     } else {
-      alert("You're too young!");
+      swal("Hmmm...","I don't think you're old enough", "warning");
     }
   };
   return (
