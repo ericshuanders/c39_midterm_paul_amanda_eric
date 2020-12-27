@@ -64,7 +64,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
   };
 
   return (
-    <div>
+    <div className="results-wrapper">
       <Navbar />
       <div className="main">
         <div className="results-dogs-div">
@@ -119,7 +119,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
         </div>
 
         <Container>
-          <Row md={4}>
+          <Row lg={4} >
             <Col></Col>
             <Col></Col>
             <Col></Col>

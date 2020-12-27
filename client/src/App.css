@@ -171,6 +171,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: white;
+  
 }
 
 .link {
@@ -420,10 +421,31 @@ h3 {
   padding-right: 50px;
   padding-left: 50px;
 }
+@media only screen and (max-width: 1024px)and (max-height: 1366px){
+  
+}
+
 @media only screen and (max-width: 768px){
   .dogs-and-beer {
     width: 70%;
   }
+  
+  .results-dogs{
+    width: 70%;
+    
+  }
+  /* .buttondiv{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  } */
+  .buttondiv button{
+    margin: 10px !important;
+  }
+  .main{
+    /* height: 100vh; */
+  }
+  
 }
 @media only screen and (max-width: 414px){
   .home-title{
