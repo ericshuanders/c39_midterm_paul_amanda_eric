@@ -24,10 +24,11 @@ const Home = () => {
       <img class="dogs-and-beer" src={Dogsnbeer} alt="dogs-and-beer" />
       <Form onSubmit={handleAge}>
         <Form.Label>
-          <h2 className>Are you old enough?</h2>
+          <h2 className="age-question">Are you old enough?</h2>
         </Form.Label>
         <Form.Control
-          style={{ textAlign: 'center' }}
+
+          style={{ textAlign: 'center', color: '#3f3f44', fontFamily: "Oswald" }}
           size="lg"
           type="text"
           id="age"
