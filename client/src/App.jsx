@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import Navbar from './components/Navbar';
 import Beerinfo from './pages/Beerinfo';
 import Results from './pages/Results';
-// import Searchbar from './components/Searchbar';
 import Randombeer from './pages/Randombeer';
 import Home from './pages/Home';
 
@@ -15,7 +13,6 @@ const App = () => {
   console.log(apiData);
   return (
     <BrowserRouter>
-      {/* <Navbar /> */}
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route
