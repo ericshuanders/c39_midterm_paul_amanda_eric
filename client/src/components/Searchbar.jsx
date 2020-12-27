@@ -7,7 +7,7 @@ const Searchbar = ({ submit }) => {
     <div>
       <Form.Control
         onKeyDown={submit}
-        style={{ textAlign: 'center' }}
+        style={{ textAlign: 'center', fontFamily: 'Oswald' }}
         id="searchbar"
         size="lg"
         type="text"

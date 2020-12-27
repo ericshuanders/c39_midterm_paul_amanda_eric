@@ -64,7 +64,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
   };
 
   return (
-    <div>
+    <div className="results-wrapper">
       <Navbar />
       <div className="main">
         <div className="results-dogs-div">
@@ -84,6 +84,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
         </div>
 
         <div className="buttondiv">
+          <div className="button-div-ABV">
           <Button
             variant="outline-dark"
             className={classNames({ active: isActiveSortOption('abv', 'asc') })}
@@ -100,6 +101,8 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
           >
             Sort by ABV - DESC
           </Button>{' '}
+          </div>
+          <div className="button-div-IBU">
           <Button
             variant="outline-dark"
             className={classNames({ active: isActiveSortOption('ibu', 'asc') })}
@@ -116,10 +119,11 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
           >
             Sort by IBU - DESC
           </Button>
+          </div>
         </div>
 
         <Container>
-          <Row md={4}>
+          <Row className="beer-row" xs={2} sm={3} md={4}>
             <Col></Col>
             <Col></Col>
             <Col></Col>
@@ -127,12 +131,13 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
 
             {sortedBreweries &&
               sortedBreweries.map((beer) => (
-                <div>
+                <div className="beer-card-wrapper">
                   <motion.div
                     whileHover={{ scale: 1.2 }}
                     transition={{ duration: 1 }}
                   >
                     <Card
+                      className="beer-card"
                       bg="dark"
                       text="white"
                       border="dark"
