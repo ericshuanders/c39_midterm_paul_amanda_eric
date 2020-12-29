@@ -186,22 +186,28 @@
   size: 5rem;
 }
 .homediv {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #eeeeee;
   padding: 20px 0;
+  height: 100vh;
   
 }
 .homediv h1,
 .homediv h2 {
   font-family: 'Oswald', sans-serif;
   color: black;
+  
+ 
 }
 .dogs-and-beer {
   border-radius: 10px;
   margin: 30px 0;
+  width: 500px;
+ 
   -webkit-box-shadow: 0px 0px 3px 5px #ffefa0;
   -moz-box-shadow: 0px 0px 3px 5px #ffefa0;
   box-shadow: 0px 0px 3px 5px #ffefa0;
@@ -427,7 +433,7 @@ h3 {
   }
   
   .results-dogs{
-    width: 80%;
+    width: 60%;
     
   }
   

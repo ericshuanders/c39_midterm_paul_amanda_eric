@@ -18,16 +18,18 @@ const Home = () => {
     }
   };
   return (
+    
     <div className="homediv">
+      
       <h1 className="home-title">CAN WE PAW YOU A BEER?</h1>
 
       <img class="dogs-and-beer" src={Dogsnbeer} alt="dogs-and-beer" />
-      <Form onSubmit={handleAge}>
+      <Form className= "age-input" onSubmit={handleAge}>
         <Form.Label>
           <h2 className="age-question">Are you old enough?</h2>
         </Form.Label>
         <Form.Control
-
+          
           style={{ textAlign: 'center', color: '#3f3f44', fontFamily: "Oswald" }}
           size="lg"
           type="text"
@@ -36,6 +38,7 @@ const Home = () => {
         />
       </Form>
     </div>
+    
   );
 };
 export default Home;
