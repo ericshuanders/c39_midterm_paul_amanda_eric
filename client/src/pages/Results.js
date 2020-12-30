@@ -123,7 +123,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
         </div>
 
         <Container>
-          <Row className="beer-row" xs={2} sm={3} md={4}>
+          <Row className="beer-row" xs={2} md={3} lg={4}>
             {/* <Col></Col>
             <Col></Col>
             <Col></Col>
