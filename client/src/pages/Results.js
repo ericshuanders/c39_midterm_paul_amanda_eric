@@ -124,14 +124,14 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
 
         <Container>
           <Row className="beer-row" xs={2} sm={3} md={4}>
+            {/* <Col></Col>
             <Col></Col>
             <Col></Col>
-            <Col></Col>
-            <Col></Col>
+            <Col></Col> */}
 
             {sortedBreweries &&
               sortedBreweries.map((beer) => (
-                <div className="beer-card-wrapper">
+                <Col className="beer-card-wrapper">
                   <motion.div
                     whileHover={{ scale: 1.2 }}
                     transition={{ duration: 1 }}
@@ -166,7 +166,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
                       </Card.Body>
                     </Card>
                   </motion.div>
-                </div>
+                </Col>
               ))}
           </Row>
         </Container>
