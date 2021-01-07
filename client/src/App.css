@@ -174,17 +174,15 @@
 
 .link {
   font-family: 'Oswald', sans-serif;
-  color: black;
+  color: black !important;
   size: 5rem;
   transition-duration: 1s;
   transition-timing-function: linear;
 }
 .link:hover {
-  color: #ffe05d;
+  color: #ffe05d !important;
 }
-.linkText {
-  size: 5rem;
-}
+
 .homediv {
   
   display: flex;
