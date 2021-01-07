@@ -219,8 +219,6 @@
 .beer-info-background, .randombeerbackground {
   border: 1px solid black;
   border-radius: 100px;
-  
-  width: 50%;
   padding: 40px !important;
   height: auto;
   margin-top: 40px;
@@ -235,6 +233,7 @@ background: linear-gradient(180deg, rgba(255,255,253,1) 0%, rgba(249,206,76,1) 5
     linear-gradient(155deg, black 23px, transparent 23px);
   background-size: 58px 58px;
   background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+  padding-bottom: 40px;
 
 }
 .beerName {
@@ -468,10 +467,21 @@ h3 {
   }
   
 }
+@media only screen and (max-width: 375px){
+  .beer-info-background {
+    width: 95%;
+  }
+  .beerABV,
+.beerIBU, .tasting-notes,.beerDescription, .foodPairing-header{
+  padding-left: 10px;
+  padding-right: 0;
+}
+}
 @media only screen and (max-width: 320px){
   .button-div-ABV, .button-div-IBU{
     flex-direction: column;
     align-items: center;
   }
+  
   
 }
