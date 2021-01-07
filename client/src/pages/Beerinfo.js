@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import Navbar from '../components/Navbar';
+import Navigation from '../components/Navbar';
 import dog from '../images/dog.jpg';
 import Button from 'react-bootstrap/Button';
 
@@ -27,7 +27,7 @@ const Beerinfo = () => {
   console.log(beerInfo);
   return (
     <div className="beer-info-wrapper">
-      <Navbar />
+      <Navigation />
 
       <Container className="beer-info-background">
         <Button onClick={handleClick} variant="dark">

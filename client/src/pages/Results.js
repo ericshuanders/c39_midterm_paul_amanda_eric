@@ -4,7 +4,7 @@ import { Row, Col, Button, Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import classNames from 'classnames';
 import Searchbar from '../components/Searchbar';
-import Navbar from '../components/Navbar';
+import Navigation from '../components/Navbar';
 import dog from '../images/dog.jpg';
 import brewdog from '../images/dogs.jpg';
 import { motion } from 'framer-motion';
@@ -65,7 +65,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
 
   return (
     <div className="results-wrapper">
-      <Navbar />
+      <Navigation />
       <div className="main">
         <div className="results-dogs-div">
           <img className="results-dogs" src={brewdog} alt="brewdog" />

@@ -1,35 +1,32 @@
 import React from 'react';
-import Nav from 'react-bootstrap/Nav';
+import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import dog from '../images/dog.jpg';
 
-const Navbar = () => {
+const Navigation = () => {
   return (
-    <motion.div className="navDiv">
-      <a className="anchorDog" href="https://www.brewdog.com/usa/">
-        <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
+    <>
+      <Navbar className='navDiv' collapseOnSelect expand='md'>
+        <Navbar.Brand className='anchorDog' href="https://www.brewdog.com/usa/">
           <img className="brewdog" src={dog} alt="brew dog" />
-        </motion.div>
-      </a>
-
-      <Nav defaultActiveKey="/home">
-        <Nav.Item>
-          <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
-            <Nav.Link className="link" href="/results">
-              <h4>PAWYOUADRINK</h4>
-            </Nav.Link>
-          </motion.div>
-        </Nav.Item>
-        <Nav.Item>
-          <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
-            <Nav.Link className="link" href="/random" eventKey="link-1">
-              <h4>Random Beer</h4>
-            </Nav.Link>
-          </motion.div>
-        </Nav.Item>
-      </Nav>
-    </motion.div>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className='mr-auto'>
+              <Nav.Link className="link" href="/results">
+                <h4>PAWYOUADRINK</h4>
+              </Nav.Link>
+              <Nav.Link className="link" href="/random" eventKey="link-1">
+                <h4>Random Beer</h4>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        
+      </Navbar>
+    </>
+   
   );
 };
 
-export default Navbar;
+export default Navigation;
