@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-// import Results from '../pages/Results';
+
 
 const Searchbar = ({ submit }) => {
   return (
@@ -14,7 +14,7 @@ const Searchbar = ({ submit }) => {
         placeholder="Search a Beer! 🔍"
       />
 
-      {/* <Results data={apiData} /> */}
+      
     </div>
   );
 };

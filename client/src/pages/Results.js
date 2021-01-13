@@ -15,8 +15,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
     sortDirection: 'asc'
   });
   const handleSubmit = (event) => {
-    // event.preventDefault();
-    // setSearch(event.target.elements.searchbar.value);
+    
     if (event.key === 'Enter') {
       setSearch(event.target.value);
     }
@@ -24,8 +23,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
     console.log(event.key);
   };
 
-  // const stateObj = { results: `${search}` };
-  // window.history.replaceState(stateObj, '', `/results/${search}`);
+  
   const handleSortClick = (sortKey, sortDirection) => {
     setSortOptions({ sortKey, sortDirection });
   };
@@ -124,10 +122,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
 
         <Container>
           <Row className="beer-row" xs={2} md={3} lg={4}>
-            {/* <Col></Col>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col> */}
+    
 
             {sortedBreweries &&
               sortedBreweries.map((beer) => (
@@ -149,7 +144,7 @@ const Results = ({ search, apiData, setSearch, setApiData }) => {
                           variant="top"
                           src={beer.image_url == null ? dog : beer.image_url}
                           alt={beer.name}
-                          // width={100}
+                          
                         />
                       </Link>
 
